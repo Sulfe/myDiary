@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_main.xml" value="0.3116716545532279" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_search.xml" value="0.3116716545532279" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_wrtie.xml" value="0.3116716545532279" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/search_item.xml" value="0.3116716545532279" />
         <entry key="..\:/Project/Public/Diary2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Project/Public/Diary2/app/src/main/res/layout/activity_wrtie.xml" value="0.25" />
         <entry key="..\:/Project/Public/Diary2/app/src/main/res/layout/search_item.xml" value="0.22665457842248413" />
