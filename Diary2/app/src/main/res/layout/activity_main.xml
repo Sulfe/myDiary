@@ -17,29 +17,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="달력"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="5dp"/>
         <Button
             android:id="@+id/mainWrite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="글쓰기"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="5dp"/>
         <Button
             android:id="@+id/mainSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="검색"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="5dp"/>
 
         <Button
             android:id="@+id/mainSet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="설정"
-            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"/>
 
     </LinearLayout>

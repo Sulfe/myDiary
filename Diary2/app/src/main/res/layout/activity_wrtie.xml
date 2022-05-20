@@ -48,11 +48,13 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/wteTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="제목을 입력해주세요."/>
 
         <EditText
+            android:id="@+id/wteContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="내용을 입력해주세요."

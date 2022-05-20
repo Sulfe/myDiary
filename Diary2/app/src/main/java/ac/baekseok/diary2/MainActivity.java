@@ -9,28 +9,36 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     Button mainCal, mainSet, mainWrite, mainSearch;
-    SQLiteDatabase database;
-    myDBHelper myDBHelper;
-
+    RecyclerView mainRecycle;
+    ArrayList<Note> notes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mainRecycle = (RecyclerView) findViewById(R.id.recyclerView);
         mainCal=(Button) findViewById(R.id.mainCal);
         mainSet=(Button) findViewById(R.id.mainSet);
         mainSearch=(Button) findViewById(R.id.mainSearch);
         mainWrite=(Button) findViewById(R.id.mainWrite);
 
+       NoteAdapter noteAdapter = new NoteAdapter();
+
+
         mainWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), WriteActivity.class);
+                startActivity(intent);
             }
         });//mainWrite
 
@@ -38,30 +46,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
             }
         });//mainSearch
 
-    }//onCreate()
+        mainRecycle.setAdapter(noteAdapter);
+        mainRecycle.setLayoutManager(new LinearLayoutManager(this));
 
-    public class myDBHelper extends SQLiteOpenHelper {
-        //db생성 테이블 생성 클래스
-        public myDBHelper(Context context){
-            super(context,"diaryDB",null,1);
-        }//myDBHelper()
-        //onCreate() 테이블 생성, onUpgrade 테이블 삭제 다시 생성
+        notes = new ArrayList<>();
+        for(int i=1;i<=10;i++){
+            if(i%2==0)
+                notes.add(new Note(i+"번째 제목",i+"번째 내용",i+"번째 날짜"));
+            else
+                notes.add(new Note(i+"번째 제목",i+"번째 내용",i+"번째 날짜"));
 
-        @Override
-        public void onCreate(SQLiteDatabase sqLiteDatabase) {
-            sqLiteDatabase.execSQL("CREATE TABLE diaryTBL(id Integer PRIMARY KEY AUTOINCREMENT NOT NULL, title TEXT NOT NULL,content TEXT, picture TEXT, date Timestamp NOT NULL);");//데이터베이스 명령어 처리
-
-        }//onCreate
-
-        //테이블이 있으면 테이블의 내용을 삭제하고 다시 생성
-        @Override
-        public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {//int i는 old테이블명, i1 새로 생성 테이블 명
-            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS diaryTBL");
-            onCreate(sqLiteDatabase);
         }
-    }//myDBHelper
+        noteAdapter.setNotes(notes);
 
+    }//onCreate()
 }//MainActivity

@@ -33,14 +33,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/contentsTextView"
+                android:id="@+id/contentTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="제목"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/contentsTextView2"
+                android:id="@+id/contentCon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -49,7 +49,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/dateTextView"
+                android:id="@+id/contentDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
