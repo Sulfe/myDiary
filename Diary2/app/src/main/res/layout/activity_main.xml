@@ -14,30 +14,42 @@
         >
         <Button
             android:id="@+id/mainCal"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="달력"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"/>
         <Button
             android:id="@+id/mainWrite"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="글쓰기"
             android:layout_marginRight="5dp"/>
         <Button
             android:id="@+id/mainSearch"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="검색"
             android:layout_marginRight="5dp"/>
 
         <Button
             android:id="@+id/mainSet"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="설정"
             android:layout_marginRight="5dp"/>
 
+        <Button
+            android:id="@+id/mainFlesh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="갱신"
+            android:layout_marginRight="5dp"/>
     </LinearLayout>
 
 

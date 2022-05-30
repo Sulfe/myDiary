@@ -1,16 +1,19 @@
 package ac.baekseok.diary2;
 
 public class Note {
-    String title;
-    String content;
-    String date;
+   private int noteId;
+   private String title;
+   private String content;
+   private String picture;
+   private String date;
 
-public Note(String title,String content, String date){
-    this.title = title;
-    this.content = content;
-    this.date = date;
-}
+    public int getNoteId() {
+        return noteId;
+    }
 
+    public void setNoteId(int noteId) {
+        this.noteId = noteId;
+    }
 
     public String getTitle() {
         return title;
@@ -26,6 +29,14 @@ public Note(String title,String content, String date){
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public String getDate() {
