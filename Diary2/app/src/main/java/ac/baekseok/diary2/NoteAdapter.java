@@ -13,7 +13,11 @@ import java.util.ArrayList;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> {
 
-    private ArrayList<Note> notes = new ArrayList<Note>();
+    private ArrayList<Note> notes = new ArrayList<>();
+
+    public NoteAdapter(ArrayList<Note> notes) {
+        this.notes = notes;
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView title, content, date;
@@ -43,11 +47,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.onBind(notes.get(position));
-    }
-
-    public void setNotes(ArrayList<Note> list){
-        this.notes = list;
-        notifyDataSetChanged();
     }
 
     @Override

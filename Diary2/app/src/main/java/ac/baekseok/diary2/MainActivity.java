@@ -20,10 +20,28 @@ public class MainActivity extends AppCompatActivity {
 
     Button mainCal, mainSet, mainWrite, mainSearch;
     RecyclerView mainRecycle;
-    ArrayList<Note> notes;
-    Note note = new Note();
+    ArrayList<Note> notes = new ArrayList<>();
+    SQLiteDatabase sqLiteDatabase;
     @SuppressLint("Range")
-    @Override
+
+    public ArrayList<Note>selectALL(){
+        ArrayList<Note>result=new ArrayList<Note>();
+
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM noteTbl",null);
+        for (int i =0; i<cursor.getCount(); i++){
+            cursor.moveToNext();
+            int noteID = cursor.getInt(0);
+            String title = cursor.getString(1);
+            String content = cursor.getString(2);
+            String picture = cursor.getString(3);
+            String date = cursor.getString(4);
+
+            Note n = new Note(noteID,title,content,picture,date);
+            result.add(n);
+        }
+        return result;
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -34,29 +52,19 @@ public class MainActivity extends AppCompatActivity {
         mainSearch=(Button) findViewById(R.id.mainSearch);
         mainWrite=(Button) findViewById(R.id.mainWrite);
 
-       NoteAdapter noteAdapter = new NoteAdapter();
+
+
 
        //db생성
         DBHelper dbHelper = new DBHelper(this);
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM noteTbl",null);
-        notes = new ArrayList<>();
-        while(cursor.moveToNext()){
-            note.setNoteId(cursor.getInt(cursor.getColumnIndex("noteId")));
-            note.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-            note.setContent(cursor.getString(cursor.getColumnIndex("content")));
-            note.setPicture(cursor.getString(cursor.getColumnIndex("picture")));
-            note.setDate(cursor.getString(cursor.getColumnIndex("date")));
-            notes.add(note);
-        }
-
-
-
+        sqLiteDatabase = dbHelper.getReadableDatabase();
+        notes = selectALL();
 
         mainWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), WriteActivity.class);
+                Intent intent = new Intent(MainActivity.this, WriteActivity.class);
+                finish();
                 startActivity(intent);
             }
         });//mainWrite
@@ -69,18 +77,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });//mainSearch
 
-        mainRecycle.setAdapter(noteAdapter);
+        NoteAdapter noteAdapter = new NoteAdapter(notes);
         mainRecycle.setLayoutManager(new LinearLayoutManager(this));
+        mainRecycle.setAdapter(noteAdapter);
+        noteAdapter.notifyDataSetChanged();
 
-        /*notes = new ArrayList<>();
-        for(int i=1;i<=10;i++){
-            if(i%2==0)
-                notes.add(new Note(i+"번째 제목",i+"번째 내용",i+"번째 날짜"));
-            else
-                notes.add(new Note(i+"번째 제목",i+"번째 내용",i+"번째 날짜"));
 
-        }*/
-        noteAdapter.setNotes(notes);
+
 
     }//onCreate()
 }//MainActivity

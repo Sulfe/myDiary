@@ -19,7 +19,6 @@
             android:minHeight="0dp" />
 
         <TextView
-            android:gravity="center_horizontal"
             android:id="@+id/dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +27,7 @@
             android:layout_marginEnd="53dp"
             android:layout_toStartOf="@+id/wteSave"
             android:layout_toEndOf="@+id/wteBack"
+            android:gravity="center_horizontal"
             android:text="2022년 5월 9일 월" />
 
         <Button

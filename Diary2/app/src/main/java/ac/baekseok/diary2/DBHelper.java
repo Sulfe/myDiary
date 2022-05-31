@@ -1,19 +1,22 @@
 package ac.baekseok.diary2;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class DBHelper extends SQLiteOpenHelper {
     static final String DbName = "myNote.db";
     static int DbVersion = 1;
+    private SQLiteDatabase sqLiteDatabase;
 
     public DBHelper(@Nullable Context context) {
         super(context, DbName, null, DbVersion);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -27,4 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(query);
         onCreate(sqLiteDatabase);
     }
+
+
+
 }

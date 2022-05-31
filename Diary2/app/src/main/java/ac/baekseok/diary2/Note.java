@@ -7,6 +7,14 @@ public class Note {
    private String picture;
    private String date;
 
+    public Note(int noteId, String title, String content, String picture, String date) {
+        this.noteId = noteId;
+        this.title = title;
+        this.content = content;
+        this.picture = picture;
+        this.date = date;
+    }
+
     public int getNoteId() {
         return noteId;
     }
