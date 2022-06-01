@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mainRecycle;
     ArrayList<Note> notes = new ArrayList<>();
     SQLiteDatabase sqLiteDatabase;
+
     @SuppressLint("Range")
 
     public ArrayList<Note>selectALL(){
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });//mainSearch
 
-        NoteAdapter noteAdapter = new NoteAdapter(notes);
+
+        NoteAdapter noteAdapter = new NoteAdapter(this,notes);
         mainRecycle.setLayoutManager(new LinearLayoutManager(this));
         mainRecycle.setAdapter(noteAdapter);
         noteAdapter.notifyDataSetChanged();
