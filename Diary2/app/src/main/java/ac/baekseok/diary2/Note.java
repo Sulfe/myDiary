@@ -1,6 +1,8 @@
 package ac.baekseok.diary2;
 
-public class Note {
+import java.util.Collection;
+
+public class Note implements Collection<Note> {
    private int noteId;
    private String title;
    private String content;
