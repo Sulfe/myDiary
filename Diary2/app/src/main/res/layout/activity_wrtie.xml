@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <RelativeLayout
+   <!-- <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,17 +19,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp" />
 
-        <TextView
-            android:id="@+id/dateText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/wteBack"
-            android:layout_marginStart="56dp"
-            android:layout_marginEnd="53dp"
-            android:layout_toStartOf="@+id/wteSave"
-            android:layout_toEndOf="@+id/wteBack"
-            android:gravity="center_horizontal"
-            android:text="2022년 5월 9일 월" />
+
 
         <Button
             android:id="@+id/wteSave"
@@ -39,7 +30,25 @@
             android:background="@drawable/ic_baseline_save_24"
             android:minWidth="0dp"
             android:minHeight="0dp"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/writeToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:text="2022년 5월 9일 월" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_main.xml" value="0.3116716545532279" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/drawable/ic_add.xml" value="0.1585" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_search.xml" value="0.3116716545532279" />
-        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_view.xml" value="0.25" />
-        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_wrtie.xml" value="0.33" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_view.xml" value="0.1" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/activity_wrtie.xml" value="0.25" />
         <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/layout/search_item.xml" value="0.3116716545532279" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/menu/menu.xml" value="0.22659256092347158" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/menu/view_menu.xml" value="0.2231722958529286" />
+        <entry key="..\:/Project/Git/myDiary/Diary2/app/src/main/res/menu/write_menu.xml" value="0.14365152919369786" />
         <entry key="..\:/Project/Public/Diary2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Project/Public/Diary2/app/src/main/res/layout/activity_wrtie.xml" value="0.25" />
         <entry key="..\:/Project/Public/Diary2/app/src/main/res/layout/search_item.xml" value="0.22665457842248413" />

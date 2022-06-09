@@ -2,7 +2,7 @@ package ac.baekseok.diary2;
 
 import java.util.Collection;
 
-public class Note implements Collection<Note> {
+public class Note{
    private int noteId;
    private String title;
    private String content;
